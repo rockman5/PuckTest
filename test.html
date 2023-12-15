@@ -102,6 +102,18 @@
     chart.render();
   };
 
+  var options = {
+    scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+                suggestedMin: -30000,    // minimum will be 0, unless there is a lower value.
+                suggestedMax: 50000
+            }
+        }]
+    }
+  };
+
   // When we get a line of data, check it and if it's
   // from the heart rate monitor, update it
   function onLine(line) {
