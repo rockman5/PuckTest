@@ -68,7 +68,7 @@
       text: "Bangle.js PPG Over Time"
     },
     axisY:{
-      title: "Heart Rate",
+      title: "PPG",
     },
     axisX:{
       title: "Time",
@@ -84,11 +84,11 @@
   chart.render();
   var dataLength = 30; // number of dataPoints visible at any point
 
-  var updateChart = function (hr) {
+  var updateChart = function (raw) {
     if (dps.length <= dataLength) {
       labelVal = new Date().toISOString();
       xVal = new Date;
-      yVal = hr;
+      yVal = raw;
       dps.push({
         x: xVal,
         y: yVal
@@ -115,7 +115,7 @@
         bpm : parseInt(d[3]),
         conf : parseInt(d[4])
       };
-      updateChart(hr_data.raw);
+      updateChart(hr_data.filt);
     }
   }
 
