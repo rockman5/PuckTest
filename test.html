@@ -65,7 +65,7 @@
   var dps = []; // dataPoints
   var chart = new CanvasJS.Chart("chartContainer", {
     title :{
-      text: "Bangle.js PPG Over Time"
+      text: "Bangle.js Real-Time PPG"
     },
     axisY:{
       title: "PPG",
@@ -126,7 +126,7 @@
         bpm : parseInt(d[3]),
         conf : parseInt(d[4])
       };
-      updateChart(hr_data.filt);
+      updateChart(hr_data.raw);
     }
   }
 
