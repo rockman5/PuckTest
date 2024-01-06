@@ -7,7 +7,6 @@
   <script src="https://www.puck-js.com/puck.js"></script>
   <div id="chartContainer" style="height: 370px; width:100%;"></div>
   <button id="btnConnect">Connect</button>
-</body>
 </html>
 <script>
   // Code to upload to Bangle.js
@@ -65,7 +64,7 @@
   var dps = []; // dataPoints
   var chart = new CanvasJS.Chart("chartContainer", {
     title :{
-      text: "Bangle.js Real-Time PPG (Filtered)"
+      text: "Bangle.js Real-Time PPG (Filtered) 2"
     },
     axisY:{
       title: "PPG",
@@ -127,8 +126,18 @@
         conf : parseInt(d[4])
       };
       updateChart(hr_data.filt);
+      var ppgArray = [];
+      ppgArray.push(hr_data.filt);
     }
   }
 
 </script>
+</body>
+    <h1>
+    the value for ppg is:
+    <script type="text/javascript">
+      document.write(ppgArray)
+    </script>
+  </h1>
+</body>
 </html>
