@@ -64,7 +64,7 @@
   var dps = []; // dataPoints
   var chart = new CanvasJS.Chart("chartContainer", {
     title :{
-      text: "Bangle.js Real-Time PPG (Filtered) 2"
+      text: "Bangle.js Real-Time PPG (Filtered)"
     },
     axisY:{
       title: "PPG",
@@ -128,16 +128,10 @@
       updateChart(hr_data.filt);
       var ppgArray = [];
       ppgArray.push(hr_data.filt);
+      document.getElementById("display").innerHTML = ppgArray;
     }
   }
 
 </script>
-</body>
-    <h1>
-    the value for ppg is:
-    <script type="text/javascript">
-      document.write(ppgArray)
-    </script>
-  </h1>
-</body>
+<div id="display"></div>
 </html>
